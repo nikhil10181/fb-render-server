@@ -7,5 +7,9 @@ app = Flask(__name__)
 def home():
     return "🔥 Aadi Facebook Server Live (Render)"
 
+@app.route("/health")
+def health():
+    return {"status": "ok", "server": "running"}
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
